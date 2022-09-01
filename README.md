@@ -2,9 +2,13 @@
       
       https://nodejs.org/en/
       
-- For run server side run this comand "npm start" on serve file.
+- For run server side run this command  on serve file.
+      
+      npm start
 
-- For run client side run this comand "npm start" on client file.
+- For run client side run this command  on client file.
+      
+      npm start
 
 - It will open the first page follow these structure :
 
