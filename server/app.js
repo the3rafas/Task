@@ -1,3 +1,4 @@
+// I've been trying to learn NodeJs for the past few days so I apologize if the code isn't good
 const express = require("express");
 const bodyParser = require("body-parser");
 
