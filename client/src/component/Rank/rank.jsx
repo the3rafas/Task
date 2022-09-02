@@ -2,7 +2,7 @@ import classes from './rank.module.css'
 const Rank = (props) => {
     return (
       <div className={classes.rank}>
-        Best:<br/>
+        Top:<br/>
         {props.word} %
       </div>
     );

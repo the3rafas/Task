@@ -19,7 +19,7 @@ const Home = (props) => {
   const { FetchReqest    } = useFetch();
   const navigate = useNavigate();
 
-  
+
   /*Custom Hook For Fetch Data*/
   const fitchContainer = () => {
     const dataHandeler = (exData) => {
@@ -77,15 +77,16 @@ const Home = (props) => {
       setIndex((prev) => prev + 1);
     }, 1500);
   };
-
   /* Navigate To Result Page */
-  if (index === 10) {
-    if (index === 0) {
-      return;
-    } else {
-      navigate(`/result:${(score.length / data.length) * 100}`);
+  useEffect(()=>{
+    if (index === 10) {
+      if (index === 0) {
+        return;
+      } else {
+        navigate(`/result:${(score.length / data.length) * 100}`);
+      }
     }
-  }
+  },[index,score])
   return (
     <Fragment>
       {/* Check if the Data Exist */}

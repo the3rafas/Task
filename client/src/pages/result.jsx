@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import { Fragment, useEffect, useState } from "react";
 import useFetch from "../hooks/useFitch.tsx";
 
@@ -35,7 +35,7 @@ const Result = () => {
       {
         url: "http://localhost:5000/result",
         method: "POSt",
-        body: { score: params },
+        body: { score: params  },
       },
       dataHandeler
     );
@@ -48,7 +48,11 @@ const Result = () => {
 
   return (
     <Fragment>
-      {rank ? <div className="poster">Your Rank is {rank} %</div>:"waiting..."}
+      {rank ? (
+        <div className="poster">Your Rank is {rank} %</div>
+      ) : (
+        "waiting..."
+      )}
 
       {params !== "100" ? (
         <Button

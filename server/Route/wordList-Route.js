@@ -5,7 +5,7 @@ const Router = express.Router();
 let filterData = [];
 
 Router.get("/", (req, res, next) => {
-  for (let index = 0; index <= data.length; index++) {
+  for (let index = 0; index <= 20; index++) {
     if (filterData.length == 10) {
       break;
     }
@@ -16,7 +16,7 @@ Router.get("/", (req, res, next) => {
     }
 
     let check = [];
-    if (index === 9) {
+    if (index === 19) {
       filterData.map((e) => {
         if (e.pos === "noun") {
           return check.push(true);

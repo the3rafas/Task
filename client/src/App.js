@@ -25,7 +25,6 @@ function App() {
           {/* Buttom Start Quiz  */}
           <Route
             path={"/"}
-            exact
             element={
               <Button
                 style={classes.btnStart}
@@ -40,6 +39,9 @@ function App() {
 
           {/* Score Route */}
           <Route path={"/result:id"} element={<Result />} />
+
+          {/*  Nou found Route */}
+          <Route path={"/*"} element={<div className="congratMassage">Not Found</div>} />
         </Routes>
       </header>
     </div>
