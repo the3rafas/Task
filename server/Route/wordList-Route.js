@@ -5,7 +5,7 @@ const Router = express.Router();
 let filterData = [];
 
 Router.get("/", (req, res, next) => {
-  for (let index = 0; index <= 30; index++) {
+  for (let index = 0; index <= data.length; index++) {
     if (filterData.length == 10) {
       break;
     }
@@ -16,26 +16,26 @@ Router.get("/", (req, res, next) => {
     }
 
     let check = [];
-    if (index === 29) {
+    if (index === 9) {
       filterData.map((e) => {
         if (e.pos === "noun") {
           return check.push(true);
-        }
-        if (e.pos === "verb") {
+        } else if (e.pos === "verb") {
           return check.push(true);
-        }
-        if (e.pos === "adverb") {
+        } else if (e.pos === "adverb") {
           return check.push(true);
-        }
-        if (e.pos === "adjective") {
+        } else if (e.pos === "adjective") {
           return check.push(true);
-        }
-        if (check.length !== 4) {
-          index = 0;
+        } else {
+          return check.push(false);
         }
       });
+      if (check.includes(false)) {
+        index = 0;
+      }
     }
   }
+
   res.json(filterData);
   filterData = [];
 });
