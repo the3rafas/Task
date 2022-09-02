@@ -25,6 +25,7 @@ const Result = () => {
   /*Custom Hook For Fetch Data*/
   const fitchContainer = () => {
     const dataHandeler = (value) => {
+      localStorage.setItem("rank", 100);
       if (value < localStorage.getItem("rank")) {
         localStorage.removeItem("rank");
         localStorage.setItem("rank", value);
